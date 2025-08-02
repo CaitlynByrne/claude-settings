@@ -26,41 +26,12 @@
       "WebFetch(domain:anthropic.com)",
       "WebFetch(domain:docs.anthropic.com)",
       "WebFetch(domain:github.com)",
-      "mcp__tavily__tavily-extract",
-      "mcp__tavily__tavily-search",
       "mcp__context7__resolve-library-id",
       "mcp__context7__get-library-docs"
     ]
   },
   "hooks": {
     "PreToolUse": [
-      {
-        "matcher": "WebFetch",
-        "hooks": [
-          {
-            "type": "command",
-            "command": ".claude/hooks/hook_webfetch_to_tavily_extract.py"
-          }
-        ]
-      },
-      {
-        "matcher": "mcp__tavily__tavily-extract",
-        "hooks": [
-          {
-            "type": "command",
-            "command": ".claude/hooks/hook_tavily_extract_to_advanced.py"
-          }
-        ]
-      },
-      {
-        "matcher": "WebSearch",
-        "hooks": [
-          {
-            "type": "command",
-            "command": ".claude/hooks/hook_websearch_to_tavily_search.py"
-          }
-        ]
-      },
       {
         "matcher": "Bash",
         "hooks": [
